@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Administration des Catgéories{% endblock %}
+
+{% block body %}
+
+<h1>Gestion des Catgéories</h1>
+
+<a href="{{path("admin_categories_add")}}" class="btn btn-primary mt-3">Ajouter une catégorie</a>
+
+<table class="table table-bordered table-hover mt-3">
+    <thead class="bg-primary text-white">
+        <tr>
+            <td scope="col">ID</td>
+            <td scope="col">Nom</td>
+            <td scope="col">Parent</td>
+            <td scope="col">Modifier</td>
+            <td scope="col">Supprimer</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for category in categories %}
+            <tr>
+                <td scope="row">{{category.id}}</td>
+                <td>{{category.name}}</td>
+                <td>{{category.parent}}</td>
+                <td>
+                    <a href="{{ path("admin_categories_update", {id:category.id}) }}" class="btn btn-success">
+                        Modifier    
+                    </a>
+                </td>
+                 <td>
+                    <a href="" class="btn btn-danger">Supprimer</a>
+                    
+                </td>
+            </tr>            
+        {% endfor %}
+    </tbody>
+</table>
+    
+{% endblock %}

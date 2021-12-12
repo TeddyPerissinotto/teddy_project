@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+
+                {% for slider in sliders %}
+
+                    {% if slider.active == 1 %}
+
+                        {{ slider.title }}
+                        
+                    {% endif %}
+                    
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

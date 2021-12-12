@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light ml-auto">
+
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" href="{{ path("home")}}">Accueil</a>
+        <a class="nav-item nav-link" href="{{ path("categories_home")}}">Publications</a>
+        <a class="nav-item nav-link" href="{{ path("contact")}}">Contact</a>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="nav-item nav-link" href="{{path("admin_home")}}">Administration</a>
+        {% endif %}
+        
+    </div>
+
+</nav>

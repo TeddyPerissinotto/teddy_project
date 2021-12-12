@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ page_name }} {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>{{post.title}}</h1>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            {{post.content| raw}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <a href="{{ path("categories_home") }}"> Retour</a>
+                </div>
+
+                <div class="col-12">
+                    <a href="{{ path("posts_home") }}"> Liste des publications </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

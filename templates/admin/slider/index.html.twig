@@ -1,0 +1,79 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Administration des Sliders{% endblock %}
+
+{% block body %}
+
+<h1>Gestion des Sliders</h1>
+
+<a href="{{path("admin_slider_add")}}" class="btn btn-primary mt-3">Ajouter un slider</a>
+
+<table class="table table-bordered table-hover mt-3">
+    <thead class="bg-primary text-white">
+        <tr>
+            <td scope="col">ID</td>
+            <td scope="col">Titre</td>
+            <td scope="col">Active</td>
+            <td scope="col">Modifier</td>
+            <td scope="col">Supprimer</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for slider in sliders %}
+            <tr>
+                <td scope="row">{{slider.id}}</td>
+                <td>{{slider.title}}</td>
+                <td>
+
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input slider-active" {{ (slider.active) ? 'checked' : ''}} data-id="{{slider.id}}" id="switch-activate-slider">
+                        <label class="custom-control-label" for="switch-activate-slider"></label>
+                    </div>
+                    
+                </td>
+                <td>
+                    <a href="{{ path("admin_slider_update", {id:slider.id}) }}" class="btn btn-success">
+                        Modifier    
+                    </a>
+                </td>
+                 <td>
+                   	<a href="#" class="btn btn-danger modal-trigger-slider" data-toggle="modal" data-target="#modal-delete" data-id="{{slider.id}}" data-title="{{slider.title}}">Supprimer</a>
+                </td>
+            </tr>            
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Supprimer un slider</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-danger"><a href="">Supprimer le slider</a></button> 
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+{% endblock %}
+
+{% block javascripts %}
+
+{{ parent() }}
+
+    <script type="text/javascript" src="{{ asset('assets/js/admin/back.js') }}"></script> 
+
+    
+          
+{% endblock %}

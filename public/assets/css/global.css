@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Roboto Regular";
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+
+body{
+    font-family: "Roboto Regular";
+}
+main{
+    padding: 40px 0 40px;
+}
+
+.bg-color-default{
+    background: rgb(78,159,134);
+    background: linear-gradient(90deg, rgba(78,159,134,1) 0%, rgba(103,238,219,0.8827906162464986) 0%, rgba(73,200,188,1) 100%);
+}
