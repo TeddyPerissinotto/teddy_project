@@ -99,6 +99,7 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
         <tr>
             <td scope=\"col\">ID</td>
             <td scope=\"col\">Titre</td>
+            <td scope=\"col\">Image Mobile</td>
             <td scope=\"col\">Active</td>
             <td scope=\"col\">Modifier</td>
             <td scope=\"col\">Supprimer</td>
@@ -106,28 +107,42 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
     </thead>
     <tbody>
         ";
-        // line 22
+        // line 23
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["sliders"]) || array_key_exists("sliders", $context) ? $context["sliders"] : (function () { throw new RuntimeError('Variable "sliders" does not exist.', 22, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["sliders"]) || array_key_exists("sliders", $context) ? $context["sliders"] : (function () { throw new RuntimeError('Variable "sliders" does not exist.', 23, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["slider"]) {
-            // line 23
-            echo "            <tr>
-                <td scope=\"row\">";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo "        
+            <tr>
+                <td scope=\"row\">";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "title", [], "any", false, false, false, 25), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "title", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
                 <td>
 
                     <div class=\"custom-control custom-switch\">
-                        <input type=\"checkbox\" class=\"custom-control-input slider-active\" ";
-            // line 29
-            echo ((twig_get_attribute($this->env, $this->source, $context["slider"], "active", [], "any", false, false, false, 29)) ? ("checked") : (""));
+                        <input type=\"checkbox\" class=\"custom-control-input image-active-mobile\" ";
+            // line 31
+            echo ((twig_get_attribute($this->env, $this->source, $context["slider"], "image_mobile", [], "any", false, false, false, 31)) ? ("checked") : (""));
             echo " data-id=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 31), "html", null, true);
+            echo "\" id=\"switch-image-mobile\">
+                        <label class=\"custom-control-label\" for=\"switch-image-mobile\"></label>
+                    </div>
+                    
+                </td>
+                <td>
+
+                    <div class=\"custom-control custom-switch\">
+                        <input type=\"checkbox\" class=\"custom-control-input slider-active\" ";
+            // line 39
+            echo ((twig_get_attribute($this->env, $this->source, $context["slider"], "active", [], "any", false, false, false, 39)) ? ("checked") : (""));
+            echo " data-id=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 39), "html", null, true);
             echo "\" id=\"switch-activate-slider\">
                         <label class=\"custom-control-label\" for=\"switch-activate-slider\"></label>
                     </div>
@@ -135,18 +150,18 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
                 </td>
                 <td>
                     <a href=\"";
-            // line 35
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_slider_update", ["id" => twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_slider_update", ["id" => twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 45)]), "html", null, true);
             echo "\" class=\"btn btn-success\">
                         Modifier    
                     </a>
                 </td>
                  <td>
                    \t<a href=\"#\" class=\"btn btn-danger modal-trigger-slider\" data-toggle=\"modal\" data-target=\"#modal-delete\" data-id=\"";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 40), "html", null, true);
+            // line 50
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "id", [], "any", false, false, false, 50), "html", null, true);
             echo "\" data-title=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "title", [], "any", false, false, false, 40), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["slider"], "title", [], "any", false, false, false, 50), "html", null, true);
             echo "\">Supprimer</a>
                 </td>
             </tr>            
@@ -155,7 +170,7 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['slider'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 54
         echo "    </tbody>
 </table>
 
@@ -190,7 +205,7 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
 
     }
 
-    // line 71
+    // line 81
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -200,15 +215,15 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 72
+        // line 82
         echo "
 ";
-        // line 73
+        // line 83
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 
     <script type=\"text/javascript\" src=\"";
-        // line 75
+        // line 85
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/admin/back.js"), "html", null, true);
         echo "\"></script> 
 
@@ -235,7 +250,7 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
 
     public function getDebugInfo()
     {
-        return array (  212 => 75,  207 => 73,  204 => 72,  194 => 71,  159 => 44,  147 => 40,  139 => 35,  128 => 29,  121 => 25,  117 => 24,  114 => 23,  110 => 22,  94 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  227 => 85,  222 => 83,  219 => 82,  209 => 81,  174 => 54,  162 => 50,  154 => 45,  143 => 39,  130 => 31,  123 => 27,  119 => 26,  115 => 24,  111 => 23,  94 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -255,6 +270,7 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
         <tr>
             <td scope=\"col\">ID</td>
             <td scope=\"col\">Titre</td>
+            <td scope=\"col\">Image Mobile</td>
             <td scope=\"col\">Active</td>
             <td scope=\"col\">Modifier</td>
             <td scope=\"col\">Supprimer</td>
@@ -262,9 +278,18 @@ class __TwigTemplate_a20a71a0e2b9647ec4f29a709f2d6d0001aa3062ac1d187c7a312555307
     </thead>
     <tbody>
         {% for slider in sliders %}
+        
             <tr>
                 <td scope=\"row\">{{slider.id}}</td>
                 <td>{{slider.title}}</td>
+                <td>
+
+                    <div class=\"custom-control custom-switch\">
+                        <input type=\"checkbox\" class=\"custom-control-input image-active-mobile\" {{ (slider.image_mobile) ? 'checked' : ''}} data-id=\"{{slider.id}}\" id=\"switch-image-mobile\">
+                        <label class=\"custom-control-label\" for=\"switch-image-mobile\"></label>
+                    </div>
+                    
+                </td>
                 <td>
 
                     <div class=\"custom-control custom-switch\">

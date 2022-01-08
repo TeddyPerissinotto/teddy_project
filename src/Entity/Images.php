@@ -33,15 +33,11 @@ class Images
     private $categories;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Slider::class, inversedBy="image_desktop")
+     * @ORM\ManyToOne(targetEntity=Slider::class, inversedBy="images")
      */
-    private $slider_desktop;
+    private $slider;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Slider::class, inversedBy="image_mobile")
-     */
-    private $image_mobile;
-
+   
     public function getId(): ?int
     {
         return $this->id;
@@ -83,27 +79,17 @@ class Images
         return $this;
     }
 
-    public function getSliderDesktop(): ?Slider
+    public function getSlider(): ?Slider
     {
-        return $this->slider_desktop;
+        return $this->slider;
     }
 
-    public function setSliderDesktop(?Slider $slider_desktop): self
+    public function setSlider(?Slider $slider): self
     {
-        $this->slider_desktop = $slider_desktop;
+        $this->slider = $slider;
 
         return $this;
     }
 
-    public function getImageMobile(): ?Slider
-    {
-        return $this->image_mobile;
-    }
-
-    public function setImageMobile(?Slider $image_mobile): self
-    {
-        $this->image_mobile = $image_mobile;
-
-        return $this;
-    }
+   
 }

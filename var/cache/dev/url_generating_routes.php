@@ -28,6 +28,7 @@ return [
     'admin_slider_update' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SliderController::updateSlider'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/slider/update']], [], []],
     'admin_slider_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SliderController::deletePost'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/slider/delete']], [], []],
     'admin_slider_activate' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SliderController::activateSlider'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/slider/activate']], [], []],
+    'admin_slider_activate_img_mobile' => [['id'], ['_controller' => 'App\\Controller\\Admin\\SliderController::activateImageMobile'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/slider/activate-on-mobile']], [], []],
     'categories_home' => [[], ['_controller' => 'App\\Controller\\CategoriesController::index'], [], [['text', '/categories/']], [], []],
     'categories_single' => [['slug'], ['_controller' => 'App\\Controller\\CategoriesController::single'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/categories/single']], [], []],
     'contact' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], []],

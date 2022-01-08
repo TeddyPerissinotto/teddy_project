@@ -57,14 +57,17 @@ return [
                     .'|slider/(?'
                         .'|update/([^/]++)(*:318)'
                         .'|delete/([^/]++)(*:341)'
-                        .'|activate/([^/]++)(*:366)'
+                        .'|activate(?'
+                            .'|/([^/]++)(*:369)'
+                            .'|\\-on\\-mobile/([^/]++)(*:398)'
+                        .')'
                     .')'
                 .')'
-                .'|/categories/single/([^/]++)(*:403)'
-                .'|/posts/([^/]++)(*:426)'
+                .'|/categories/single/([^/]++)(*:436)'
+                .'|/posts/([^/]++)(*:459)'
                 .'|/e(?'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:475)'
-                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:518)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:508)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:551)'
                 .')'
             .')/?$}sDu',
     ],
@@ -82,11 +85,12 @@ return [
         284 => [[['_route' => 'admin_posts_activate', '_controller' => 'App\\Controller\\Admin\\PostsController::activatePost'], ['id'], null, null, false, true, null]],
         318 => [[['_route' => 'admin_slider_update', '_controller' => 'App\\Controller\\Admin\\SliderController::updateSlider'], ['id'], null, null, false, true, null]],
         341 => [[['_route' => 'admin_slider_delete', '_controller' => 'App\\Controller\\Admin\\SliderController::deletePost'], ['id'], null, null, false, true, null]],
-        366 => [[['_route' => 'admin_slider_activate', '_controller' => 'App\\Controller\\Admin\\SliderController::activateSlider'], ['id'], null, null, false, true, null]],
-        403 => [[['_route' => 'categories_single', '_controller' => 'App\\Controller\\CategoriesController::single'], ['slug'], null, null, false, true, null]],
-        426 => [[['_route' => 'posts_single', '_controller' => 'App\\Controller\\PostsController::single'], ['slug'], null, null, false, true, null]],
-        475 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        518 => [
+        369 => [[['_route' => 'admin_slider_activate', '_controller' => 'App\\Controller\\Admin\\SliderController::activateSlider'], ['id'], null, null, false, true, null]],
+        398 => [[['_route' => 'admin_slider_activate_img_mobile', '_controller' => 'App\\Controller\\Admin\\SliderController::activateImageMobile'], ['id'], null, null, false, true, null]],
+        436 => [[['_route' => 'categories_single', '_controller' => 'App\\Controller\\CategoriesController::single'], ['slug'], null, null, false, true, null]],
+        459 => [[['_route' => 'posts_single', '_controller' => 'App\\Controller\\PostsController::single'], ['slug'], null, null, false, true, null]],
+        508 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        551 => [
             [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

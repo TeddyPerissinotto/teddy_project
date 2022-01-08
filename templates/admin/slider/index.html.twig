@@ -13,6 +13,7 @@
         <tr>
             <td scope="col">ID</td>
             <td scope="col">Titre</td>
+            <td scope="col">Image Mobile</td>
             <td scope="col">Active</td>
             <td scope="col">Modifier</td>
             <td scope="col">Supprimer</td>
@@ -20,9 +21,18 @@
     </thead>
     <tbody>
         {% for slider in sliders %}
+        
             <tr>
                 <td scope="row">{{slider.id}}</td>
                 <td>{{slider.title}}</td>
+                <td>
+
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input image-active-mobile" {{ (slider.image_mobile) ? 'checked' : ''}} data-id="{{slider.id}}" id="switch-image-mobile">
+                        <label class="custom-control-label" for="switch-image-mobile"></label>
+                    </div>
+                    
+                </td>
                 <td>
 
                     <div class="custom-control custom-switch">
@@ -73,7 +83,5 @@
 {{ parent() }}
 
     <script type="text/javascript" src="{{ asset('assets/js/admin/back.js') }}"></script> 
-
-    
           
 {% endblock %}

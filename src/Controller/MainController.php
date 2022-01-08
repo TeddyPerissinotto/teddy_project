@@ -17,7 +17,6 @@ class MainController extends AbstractController
 
         $sliders = $sliderRepository->findAll();
 
-
         
         return $this->render('main/index.html.twig', [
             'page_name' => $page_name,

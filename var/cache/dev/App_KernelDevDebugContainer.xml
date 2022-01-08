@@ -6590,7 +6590,7 @@
         <argument key="eventDispatcher" type="service_closure" id="debug.event_dispatcher"/>
       </argument>
     </service>
-    <service id=".service_locator.6pXJlrM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.0xBoXjt" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CategoriesController::index" type="service_closure" id=".service_locator..Ri2R5w"/>
@@ -6599,6 +6599,7 @@
         <argument key="App\Controller\Admin\PostsController::deletePost" type="service_closure" id=".service_locator.RL15XL3"/>
         <argument key="App\Controller\Admin\PostsController::index" type="service_closure" id=".service_locator.802BlKB"/>
         <argument key="App\Controller\Admin\PostsController::updatePost" type="service_closure" id=".service_locator.RL15XL3"/>
+        <argument key="App\Controller\Admin\SliderController::activateImageMobile" type="service_closure" id=".service_locator.lJHNmQl"/>
         <argument key="App\Controller\Admin\SliderController::activateSlider" type="service_closure" id=".service_locator.lJHNmQl"/>
         <argument key="App\Controller\Admin\SliderController::deletePost" type="service_closure" id=".service_locator.lJHNmQl"/>
         <argument key="App\Controller\Admin\SliderController::index" type="service_closure" id=".service_locator.yuONzAN"/>
@@ -6624,6 +6625,7 @@
         <argument key="App\Controller\Admin\PostsController:deletePost" type="service_closure" id=".service_locator.RL15XL3"/>
         <argument key="App\Controller\Admin\PostsController:index" type="service_closure" id=".service_locator.802BlKB"/>
         <argument key="App\Controller\Admin\PostsController:updatePost" type="service_closure" id=".service_locator.RL15XL3"/>
+        <argument key="App\Controller\Admin\SliderController:activateImageMobile" type="service_closure" id=".service_locator.lJHNmQl"/>
         <argument key="App\Controller\Admin\SliderController:activateSlider" type="service_closure" id=".service_locator.lJHNmQl"/>
         <argument key="App\Controller\Admin\SliderController:deletePost" type="service_closure" id=".service_locator.lJHNmQl"/>
         <argument key="App\Controller\Admin\SliderController:index" type="service_closure" id=".service_locator.yuONzAN"/>
@@ -7208,12 +7210,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.6pXJlrM"/>
+      <argument type="service" id=".service_locator.0xBoXjt"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.6pXJlrM"/>
+      <argument type="service" id=".service_locator.0xBoXjt"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -8081,7 +8083,7 @@
     <service id="fm_elfinder.loader" alias="fm_elfinder.loader.default" public="true"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.6pXJlrM"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.0xBoXjt"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>

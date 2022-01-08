@@ -16,15 +16,8 @@ class SliderType extends AbstractType
         $builder
             ->add('title')
             ->add('link')
-            ->add('active')
-            ->add('image_desktop', FileType::class, [
+            ->add('images', FileType::class, [
                 'label' => 'Image Standard',
-                'multiple' => false,
-                'mapped' => false,
-                'required' => true
-            ])
-            ->add('image_mobile', FileType::class, [
-                'label' => 'Image Mobile',
                 'multiple' => false,
                 'mapped' => false,
                 'required' => true

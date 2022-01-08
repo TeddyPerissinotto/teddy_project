@@ -34,20 +34,21 @@ class Slider
      */
     private $active;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="slider_desktop", orphanRemoval=true, cascade={"persist"})
+     /**
+     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="slider", orphanRemoval=true, cascade={"persist"})
      */
-    private $image_desktop;
+    private $images;
 
     /**
-     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="image_mobile", orphanRemoval=true, cascade={"persist"})
+     * @ORM\Column(type="integer")
      */
     private $image_mobile;
+    
 
     public function __construct()
     {
-        $this->image_desktop = new ArrayCollection();
-        $this->image_mobile = new ArrayCollection();
+        $this->images = new ArrayCollection();
+    
     }
 
     public function getId(): ?int
@@ -94,61 +95,45 @@ class Slider
     /**
      * @return Collection|Images[]
      */
-    public function getImageDesktop(): Collection
+    public function getImages(): Collection
     {
-        return $this->image_desktop;
+        return $this->images;
     }
 
-    public function addImageDesktop(Images $imageDesktop): self
+    public function addImages(Images $images): self
     {
-        if (!$this->image_desktop->contains($imageDesktop)) {
-            $this->image_desktop[] = $imageDesktop;
-            $imageDesktop->setSliderDesktop($this);
+        if (!$this->images->contains($images)) {
+            $this->images[] = $images;
+            $images->setSlider($this);
         }
 
         return $this;
     }
 
-    public function removeImageDesktop(Images $imageDesktop): self
+    public function removeImages(Images $images): self
     {
-        if ($this->image_desktop->removeElement($imageDesktop)) {
+        if ($this->images->removeElement($images)) {
             // set the owning side to null (unless already changed)
-            if ($imageDesktop->getSliderDesktop() === $this) {
-                $imageDesktop->setSliderDesktop(null);
+            if ($images->getSlider() === $this) {
+                $images->setSlider(null);
             }
         }
 
         return $this;
     }
 
-    /**
-     * @return Collection|Images[]
-     */
-    public function getImageMobile(): Collection
+    public function getImage_Mobile(): ?int
     {
         return $this->image_mobile;
     }
 
-    public function addImageMobile(Images $imageMobile): self
+    public function setImage_Mobile(int $image_mobile): self
     {
-        if (!$this->image_mobile->contains($imageMobile)) {
-            $this->image_mobile[] = $imageMobile;
-            $imageMobile->setImageMobile($this);
-        }
+        $this->image_mobile = $image_mobile;
 
         return $this;
     }
 
-    public function removeImageMobile(Images $imageMobile): self
-    {
-        if ($this->image_mobile->removeElement($imageMobile)) {
-            // set the owning side to null (unless already changed)
-            if ($imageMobile->getImageMobile() === $this) {
-                $imageMobile->setImageMobile(null);
-            }
-        }
-
-        return $this;
-    }
+   
 
 }

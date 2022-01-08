@@ -40,23 +40,19 @@ class SliderController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
-            $image_desktop = $form->get('image_desktop')->getData();
-            $image_mobile = $form->get('image_mobile')->getData();
+            $images = $form->get('images')->getData();
+          
 
-            $file_desktop = md5(uniqid()) . '.' . $image_desktop->guessExtension();
-            $file_mobile = md5(uniqid()) . '.' . $image_mobile->guessExtension();
+            $file_desktop = md5(uniqid()) . '.' . $images->guessExtension();
 
-            $image_desktop->move($this->getParameter('images_directory'), $file_desktop);
-            $image_mobile->move($this->getParameter('images_directory'), $file_mobile);
+            $images->move($this->getParameter('images_directory'), $file_desktop);
 
-            $img_desktop = new Images();
-            $img_mobile = new Images();
+            $img = new Images();
 
-            $img_desktop->setName($file_desktop);
-            $img_mobile->setName($file_mobile);
+            $img->setName($file_desktop);
 
-            $slider->addImageDesktop($img_desktop);
-            $slider->addImageMobile($img_mobile);
+            $slider->addImages($img);
+            $slider->setImage_Mobile(true);
 
             $slider->setActive(false);
 
@@ -101,34 +97,21 @@ class SliderController extends AbstractController
      */
     public function deletePost(Slider $slider)
     {
-        $imagesDesktop = $slider->getImageDesktop();
-        $imagesMobile = $slider->getImageMobile();
+        $images = $slider->getImages();
         
-        if($imagesDesktop){
+        if($images){
             // On boucle sur les images de l'annonce
-            foreach($imagesDesktop as $imageDesktop){
+            foreach($images as $image){
                 // On "génère" le chemin physique de l'image
-                $image_desktop_name = $this->getParameter("images_directory") . '/' . $imageDesktop->getName();
+                $image_name = $this->getParameter("images_directory") . '/' . $image->getName();
                 
                 // On vérifie si l'image existe
-                if(file_exists($image_desktop_name)){
-                    unlink($image_desktop_name);
+                if(file_exists($image_name)){
+                    unlink($image_name);
                 }
             }
         }
 
-        if($imagesMobile){
-            // On boucle sur les images de l'annonce
-            foreach($imagesMobile as $imageMobile){
-                // On "génère" le chemin physique de l'image
-                $image_mobile_name = $this->getParameter("images_directory") . '/' . $imageMobile->getName();
-                
-                // On vérifie si l'image existe
-                if(file_exists($image_mobile_name)){
-                    unlink($image_mobile_name);
-                }
-            }
-        }
 
         $em = $this->getDoctrine()->getManager();
         $em->remove($slider);
@@ -144,6 +127,19 @@ class SliderController extends AbstractController
     public function activateSlider(Slider $slider){
 
         $slider->setActive(($slider->getActive())?false:true);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($slider);
+        $em->flush();
+
+        return new Response("true");
+    }
+
+    /**
+     * @Route("/activate-on-mobile/{id}", name="activate_img_mobile")
+     */
+    public function activateImageMobile(Slider $slider){
+
+        $slider->setImage_Mobile(($slider->getImage_Mobile())?false:true);
         $em = $this->getDoctrine()->getManager();
         $em->persist($slider);
         $em->flush();

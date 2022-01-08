@@ -63,8 +63,9 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
         // line 9
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 16
-        echo "    </head>
+        // line 17
+        echo "
+    </head>
 
     <body class=\"bg-color-default\">
 
@@ -74,23 +75,23 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
 
                     <header>
                         ";
-        // line 25
+        // line 27
         $this->displayBlock('header', $context, $blocks);
-        // line 28
+        // line 30
         echo "                    </header>
 
                     ";
-        // line 30
+        // line 32
         $this->displayBlock('main', $context, $blocks);
-        // line 39
+        // line 41
         echo "                    
                         
                     <footer>
                     
                         ";
-        // line 43
+        // line 45
         $this->displayBlock('footer', $context, $blocks);
-        // line 46
+        // line 48
         echo "                            
                     </footer>
                         
@@ -104,9 +105,9 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
 
 
         ";
-        // line 58
+        // line 60
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 64
+        // line 68
         echo "    
     </body>
 </html>
@@ -151,18 +152,22 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
         echo "            <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/global.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/library/slick.css"), "html", null, true);
         echo "\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/header.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/global.css"), "html", null, true);
         echo "\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 13
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/footer.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/header.css"), "html", null, true);
         echo "\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/footer.css"), "html", null, true);
+        echo "\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/fontawesome/css/all.css"), "html", null, true);
         echo "\">
         ";
@@ -174,7 +179,7 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
 
     }
 
-    // line 25
+    // line 27
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -184,10 +189,10 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 26
+        // line 28
         echo "                            ";
-        $this->loadTemplate("header.html.twig", "base.html.twig", 26)->display($context);
-        // line 27
+        $this->loadTemplate("header.html.twig", "base.html.twig", 28)->display($context);
+        // line 29
         echo "                        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -197,7 +202,7 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
 
     }
 
-    // line 30
+    // line 32
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -207,14 +212,14 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
-        // line 31
+        // line 33
         echo "                    
                         <main>
                             
                             ";
-        // line 34
+        // line 36
         $this->displayBlock('body', $context, $blocks);
-        // line 35
+        // line 37
         echo "                                    
                         </main>
                         
@@ -227,7 +232,7 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
 
     }
 
-    // line 34
+    // line 36
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -245,7 +250,7 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
 
     }
 
-    // line 43
+    // line 45
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -255,10 +260,10 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 44
+        // line 46
         echo "                            ";
-        $this->loadTemplate("footer.html.twig", "base.html.twig", 44)->display($context);
-        // line 45
+        $this->loadTemplate("footer.html.twig", "base.html.twig", 46)->display($context);
+        // line 47
         echo "                        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -268,7 +273,7 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
 
     }
 
-    // line 58
+    // line 60
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -278,13 +283,23 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 59
+        // line 61
         echo "            <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
             <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
-            ";
-        // line 63
-        echo "        ";
+            <script type=\"text/javascript\" src=\"";
+        // line 64
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/library/slick.min.js"), "html", null, true);
+        echo "\"></script> 
+            <script type=\"text/javascript\" src=\"";
+        // line 65
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/library/imgLiquid-min.js"), "html", null, true);
+        echo "\"></script> 
+            <script type=\"text/javascript\" src=\"";
+        // line 66
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/global.js"), "html", null, true);
+        echo "\"></script> 
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -305,7 +320,7 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
 
     public function getDebugInfo()
     {
-        return array (  287 => 63,  282 => 59,  272 => 58,  262 => 45,  259 => 44,  249 => 43,  231 => 34,  218 => 35,  216 => 34,  211 => 31,  201 => 30,  191 => 27,  188 => 26,  178 => 25,  166 => 14,  162 => 13,  158 => 12,  154 => 11,  151 => 10,  141 => 9,  123 => 5,  110 => 64,  108 => 58,  94 => 46,  92 => 43,  86 => 39,  84 => 30,  80 => 28,  78 => 25,  67 => 16,  64 => 9,  60 => 6,  56 => 5,  50 => 1,);
+        return array (  300 => 66,  296 => 65,  292 => 64,  287 => 61,  277 => 60,  267 => 47,  264 => 46,  254 => 45,  236 => 36,  223 => 37,  221 => 36,  216 => 33,  206 => 32,  196 => 29,  193 => 28,  183 => 27,  171 => 15,  167 => 14,  163 => 13,  159 => 12,  155 => 11,  152 => 10,  142 => 9,  124 => 5,  111 => 68,  109 => 60,  95 => 48,  93 => 45,  87 => 41,  85 => 32,  81 => 30,  79 => 27,  67 => 17,  64 => 9,  60 => 6,  56 => 5,  50 => 1,);
     }
 
     public function getSourceContext()
@@ -320,11 +335,13 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('assets/css/library/slick.css') }}\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('assets/css/global.css') }}\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('assets/css/header.css') }}\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('assets/css/footer.css') }}\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('assets/fontawesome/css/all.css') }}\">
         {% endblock %}
+
     </head>
 
     <body class=\"bg-color-default\">
@@ -371,7 +388,9 @@ class __TwigTemplate_03d7edc4a284f24aff9e0bfef9a11ec6f360222a7ab199458547488e495
             <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
             <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
-            {#{{ encore_entry_script_tags('app') }}#}
+            <script type=\"text/javascript\" src=\"{{ asset('assets/js/library/slick.min.js') }}\"></script> 
+            <script type=\"text/javascript\" src=\"{{ asset('assets/js/library/imgLiquid-min.js') }}\"></script> 
+            <script type=\"text/javascript\" src=\"{{ asset('assets/js/global.js') }}\"></script> 
         {% endblock %}
     
     </body>

@@ -5,13 +5,22 @@
 {% block body %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 block-sliders">
 
                 {% for slider in sliders %}
-
+                            
                     {% if slider.active == 1 %}
 
-                        {{ slider.title }}
+                        <div class="block-slider imgLiquid">
+                        
+                            {% for image in slider.images %}
+
+                                <img src="{{asset('uploads/images/')}}{{image.name}}" alt="{{ slider.title }}">
+                                
+
+                            {% endfor %}
+
+                        </div>
                         
                     {% endif %}
                     
@@ -20,4 +29,12 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+
+{{ parent() }}
+
+<script type="text/javascript" src="{{ asset('assets/js/slider/slider.js') }}"></script> 
+
 {% endblock %}

@@ -1,9 +1,9 @@
 jQuery(document).ready(function($){
 
     //ACTIVATION OU DESACTIVATION DE LA PUBLICATION
-    var activate = $("[type=checkbox]");
+    var activateSlider = $(".slider-active[type=checkbox]");
 
-    activate.on( "click", function() {
+    activateSlider.on( "click", function() {
 
         if($(this).attr('id', 'switch-activate-slider')){
             var type = "slider";
@@ -24,6 +24,24 @@ jQuery(document).ready(function($){
         xmlhttp.send();
     });
 
+
+    var activateImageMobile = $(".image-active-mobile[type=checkbox]");
+
+    activateImageMobile.on( "click", function() {
+
+
+        var dataId = $(this).attr("data-id");
+        var xmlhttp = new XMLHttpRequest;
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText)
+           }
+        };
+        
+        xmlhttp.open("get", `/admin/slider/activate-on-mobile/`+dataId);
+        xmlhttp.send();
+    });
 
     //SUPPRESSION DE LA PUBLICATION
     var delete_post = $(".modal-trigger-post");
